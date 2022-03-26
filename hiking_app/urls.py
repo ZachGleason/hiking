@@ -19,5 +19,6 @@ from django.urls import path
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
-    path('', include('hike.urls'))
+    path('', include('hike.urls')),
+    path('', include('form_app.urls'))
 ]
