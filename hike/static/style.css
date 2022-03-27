@@ -81,3 +81,35 @@
     margin-top: 212px;
     margin-left: -50px;
 }
+
+#logo1 {
+    height: 65px;
+    width: 170px;
+}
+
+#logobox {
+    position: absolute;
+    margin-left: 820px;
+}
+
+#cards {
+    height: 350px;
+    width: 1750px;
+    background-color: rgb(87, 99, 88);
+    border-radius: 50px;
+    margin: auto;
+    margin-top: 10px;
+}
+
+
+.card1 {
+    width: 270px;
+    height: 300px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    display: inline-block;
+    margin-left: 65px;
+    margin-top: 25px;
+}
+
+
