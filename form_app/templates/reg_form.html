@@ -19,18 +19,19 @@
             {% endif %}
         {% endwith %} -->
     </div>
+    {% extends "dashboard.html" %}
+
+    {% block content %}
+
+    {% load crispy_forms_tags %} 
     <div class="container-fluid" id="form-box">
         <h1>Register</h1>
         <form action="/register" method="post">
             {% csrf_token %}
-            <input type="text" name="first_name" class="form-control" placeholder="First Name"><br>
-            <input type="text" name="last_name" class="form-control" placeholder="Last Name"><br>
-            <input type="text" name="email" class="form-control" placeholder="Email Address"><br>
-            <input type="password" name="password" class="form-control" placeholder="Password"><br>
+            {{ register_form|crispy }}
             <button class="btn btn-success" type="submit">Submit</button>
         </form>
-            </div>
-        </div>
+    {% endblock %}
     </div>
 </body>
 </html>

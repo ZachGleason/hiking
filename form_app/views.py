@@ -3,7 +3,7 @@ def index(request):
     return render(request,"index.html")
 
 def create_user(request):
-    template = 'form_app/reg_form.html'
+    template = 'reg_form.html'
     print("Got Post Info....................")
     first_name = request.POST.get['first_name']
     last_name = request.POST.get['last_name']
