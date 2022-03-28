@@ -34,6 +34,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'hike',
+    'form_app',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

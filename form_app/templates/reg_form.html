@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register User</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style2.css' %}"> 
+</head>
+<body>
+    <div class="alert">
+        <!-- {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p class="alert-danger">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %} -->
+    </div>
+    <div class="container-fluid" id="form-box">
+        <h1>Register</h1>
+        <form action="/register" method="post">
+            {% csrf_token %}
+            <input type="text" name="first_name" class="form-control" placeholder="First Name"><br>
+            <input type="text" name="last_name" class="form-control" placeholder="Last Name"><br>
+            <input type="text" name="email" class="form-control" placeholder="Email Address"><br>
+            <input type="password" name="password" class="form-control" placeholder="Password"><br>
+            <button class="btn btn-success" type="submit">Submit</button>
+        </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
