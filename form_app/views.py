@@ -1,4 +1,8 @@
 from django.shortcuts import render
+from form_app.forms import NewUserForm
+from django.contrib.auth import login
+from django.contrib import messages
+
 def index(request):
     return render(request,"index.html")
 
@@ -19,5 +23,17 @@ def create_user(request):
     print(last_name)
     print(email)
     print(password)
-    return render(request,"show.html", context)
-    
+    return render(request, template, context)
+
+
+def register_request(request):
+	if request.method == "POST":
+		form = NewUserForm(request.POST)
+		if form.is_valid():
+			user = form.save()
+			login(request, user)
+			messages.success(request, "Registration successful." )
+			return redirect("main:homepage")
+		messages.error(request, "Unsuccessful registration. Invalid information.")
+	form = NewUserForm()
+	return render (request=request, template_name="reg_form.html", context={"register_form":form})
